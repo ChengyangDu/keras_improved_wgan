@@ -29,7 +29,7 @@ class Net(object):
             dis_model = Sequential()
             dis_model.add(Conv2D(dim, 5, strides=2, padding='same', data_format='channels_first', input_shape=[3, 64, 64]))
             dis_model.add(LeakyReLU(0.2))
-            dis_model.add(Conv2D(dim*2, 5, strides=2))
+            dis_model.add(Conv2D(dim*2, 5, strides=2, data_format='channels_first'))
             dis_model.add(LeakyReLU(0.2))
             dis_model.add(Flatten())
             dis_model.add(Dense(256))
